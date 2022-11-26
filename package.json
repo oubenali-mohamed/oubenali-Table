@@ -1,10 +1,21 @@
 {
+<<<<<<< HEAD
   "name": "tableouben",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+=======
+  "name": "oubentable",
+  "version": "1.0.1",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+>>>>>>> 195404e (modification du tbody de table)
   "repository": {
     "type": "git",
     "url": "git+https://github.com/oubenali-mohamed/oubenali-table.git"
