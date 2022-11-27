@@ -1,21 +1,19 @@
 {
-<<<<<<< HEAD
-  "name": "tableouben",
+  "name": "oubenali-table-library",
   "version": "1.0.0",
+  "description": "## InstallationRun the following command:`npm install mohamed-table`",
   "main": "index.js",
+  "dependencies": {
+    "create-component-lib": "^0.1.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "^5.0.1",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-=======
-  "name": "oubentable",
-  "version": "1.0.1",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "files": [
-    "dist",
-    "README.md"
-  ],
->>>>>>> 195404e (modification du tbody de table)
   "repository": {
     "type": "git",
     "url": "git+https://github.com/oubenali-mohamed/oubenali-table.git"
@@ -25,6 +23,5 @@
   "bugs": {
     "url": "https://github.com/oubenali-mohamed/oubenali-table/issues"
   },
-  "homepage": "https://github.com/oubenali-mohamed/oubenali-table#readme",
-  "description": ""
+  "homepage": "https://github.com/oubenali-mohamed/oubenali-table#readme"
 }

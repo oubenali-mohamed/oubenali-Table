@@ -7,18 +7,26 @@ function TableEmployee({ columns, rows }) {
         <thead>
           <tr>
             {columns.map((column, index) => (
-              <th key={index} className="th">
+              <th key={index} >
                 {column}
               </th>
             ))}
           </tr>
         </thead>
         <tbody>
-          <tr>
             {rows.map((row, index) => (
-              <td key={index}>{row}</td>
+              <tr key={index} >
+                <td>{row.firstName}</td>
+                <td>{row.lastName}</td>
+                <td>{row.city}</td>
+                <td>{row.zipCode}</td>
+                <td>{row.street}</td>
+                <td>{row.state}</td>
+                <td>{row.department}</td>
+                <td>{row.dateOfBirth}</td>
+                <td>{row.startDate}</td>
+              </tr>
             ))}
-          </tr>
         </tbody>
       </table>
     </div>
