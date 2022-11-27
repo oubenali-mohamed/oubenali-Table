@@ -22,7 +22,7 @@ function TableEmployee({ columns, rows }) {
                 <td>{row.zipCode}</td>
                 <td>{row.street}</td>
                 <td>{row.state}</td>
-                <td>{row.department}</td>
+                <td>{row.department}</td> 
                 <td>{row.dateOfBirth}</td>
                 <td>{row.startDate}</td>
               </tr>
