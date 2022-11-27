@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "oubenali-table-library",
   "version": "1.0.0",
   "description": "## InstallationRun the following command:`npm install mohamed-table`",
@@ -14,6 +15,16 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+=======
+  "name": "table_librairie",
+  "version": "1.0.1",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+>>>>>>> 22e1e213 (modification du tbody de table)
   "repository": {
     "type": "git",
     "url": "git+https://github.com/oubenali-mohamed/oubenali-table.git"
