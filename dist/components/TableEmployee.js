@@ -10,14 +10,16 @@ function TableEmployee(_ref) {
   var columns = _ref.columns,
     rows = _ref.rows;
   var displyaRows = [];
-  var inputSearch = document.querySelector('#inputSearch');
-  inputSearch.addEventListener('input', filtreEmployee);
-  function filtreEmployee(e) {
-    var searchLettre = e.target.value.toLowerCase();
-    displyaRows = rows.filter(function (employee) {
-      return employee.lastName.toLowerCase().includes(searchLettre);
-    });
-  }
+  window.onload = function () {
+    var inputSearch = document.querySelector('#inputSearch');
+    inputSearch.addEventListener('input', filtreEmployee);
+    function filtreEmployee(e) {
+      var searchLettre = e.target.value.toLowerCase();
+      displyaRows = rows.filter(function (employee) {
+        return employee.lastName.toLowerCase().includes(searchLettre);
+      });
+    }
+  };
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
     className: "searchList"
   }, /*#__PURE__*/_react.default.createElement("label", {
