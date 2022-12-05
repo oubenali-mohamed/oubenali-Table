@@ -1,20 +1,19 @@
 import React from 'react'
 
 function TableEmployee({ columns, rows }) {
-  
   let displayRows = [...rows]
 
-  
+  window.onload = () => {
     const inputSearch = document.querySelector('#inputSearch')
     inputSearch.addEventListener('input', filtreEmployee)
     function filtreEmployee(e) {
       const searchLettre = e.target.value.toLowerCase()
-      displayRows.filter((employee) =>
+      displayRows = rows.filter((employee) =>
         employee.lastName.toLowerCase().includes(searchLettre)
       )
     }
     console.log(displayRows)
-  
+  }
   return (
     <div>
       <div className="searchList">
