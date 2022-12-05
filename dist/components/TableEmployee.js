@@ -5,11 +5,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
+var _toConsumableArray2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/toConsumableArray"));
 var _react = _interopRequireDefault(require("react"));
 function TableEmployee(_ref) {
   var columns = _ref.columns,
     rows = _ref.rows;
-  var displyaRows = [];
+  var displyaRows = (0, _toConsumableArray2.default)(rows);
   window.onload = function () {
     var inputSearch = document.querySelector('#inputSearch');
     inputSearch.addEventListener('input', filtreEmployee);
