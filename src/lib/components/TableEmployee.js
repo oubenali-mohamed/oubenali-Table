@@ -2,7 +2,7 @@ import React from 'react'
 
 function TableEmployee({ columns, rows }) {
   
-  let displyaRows = []
+  let displyaRows = [...rows]
 
   window.onload = () => {
     const inputSearch = document.querySelector('#inputSearch')
