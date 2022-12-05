@@ -16,7 +16,7 @@ function TableEmployee(_ref) {
     inputSearch.addEventListener('input', filtreEmployee);
     function filtreEmployee(e) {
       var searchLettre = e.target.value.toLowerCase();
-      displayRows = rows.filter(function (employee) {
+      displayRows.filter(function (employee) {
         return employee.lastName.toLowerCase().includes(searchLettre);
       });
     }
