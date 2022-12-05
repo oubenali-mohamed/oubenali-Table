@@ -23,7 +23,7 @@ function TableEmployee(_ref) {
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
     className: "searchList"
   }, /*#__PURE__*/_react.default.createElement("label", {
-    for: "inputSearch"
+    htmlfor: "inputSearch"
   }, "Search:"), /*#__PURE__*/_react.default.createElement("input", {
     type: "search",
     id: "inputSearch",

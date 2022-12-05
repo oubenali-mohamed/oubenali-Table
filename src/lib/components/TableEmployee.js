@@ -16,7 +16,7 @@ function TableEmployee({ columns, rows }) {
   return (
     <div>
       <div className="searchList">
-        <label htmlfor="inputSearch">Search:</label>
+        <label htmlFor="inputSearch">Search:</label>
         <input type="search" id="inputSearch" name="employee" />
       </div>
       <table>
