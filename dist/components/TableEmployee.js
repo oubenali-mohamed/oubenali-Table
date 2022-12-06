@@ -13,15 +13,19 @@ function TableEmployee(_ref) {
   var displayRows = (0, _toConsumableArray2.default)(rows);
   window.onload = function () {
     var inputSearch = document.querySelector('#inputSearch');
-    inputSearch.addEventListener('input', filtreEmployee);
-  };
-  function filtreEmployee(e) {
-    var searchLettre = e.target.value.toLowerCase();
-    console.log(searchLettre);
-    console.log(displayRows);
-    displayRows.filter(function (employee) {
-      return employee.lastName.toLowerCase().includes(searchLettre);
+    inputSearch.addEventListener('input', function (e) {
+      e.preventDefault();
+      var searchLettre = e.target.value;
+      filtreEmployee(searchLettre, displayRows);
     });
+  };
+  function filtreEmployee(lettre, element) {
+    for (var i = 0; i < element.length; i++) {
+      if (element[i].name.toLowerCase().includes(lettre)) {
+        return element[i];
+      }
+      console.log(element[i]);
+    }
     // console.log(displayRows)
   }
 

@@ -5,15 +5,19 @@ function TableEmployee({ columns, rows }) {
 
   window.onload = () => {
     const inputSearch = document.querySelector('#inputSearch')
-    inputSearch.addEventListener('input', filtreEmployee)
+    inputSearch.addEventListener('input', function (e) {
+      e.preventDefault()
+      const searchLettre = e.target.value
+      filtreEmployee(searchLettre, displayRows)
+    })
   }
-  function filtreEmployee(e) {
-    const searchLettre = e.target.value.toLowerCase()
-    console.log(searchLettre)
-    console.log(displayRows)
-    displayRows.filter((employee) =>
-      employee.lastName.toLowerCase().includes(searchLettre)
-    )
+  function filtreEmployee(lettre, element) {
+    for (let i = 0; i < element.length; i++) {
+      if (element[i].name.toLowerCase().includes(lettre)) {
+        return element[i]
+      }
+      console.log(element[i])
+    }
     // console.log(displayRows)
   }
 
