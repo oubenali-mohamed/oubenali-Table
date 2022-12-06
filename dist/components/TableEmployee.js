@@ -18,7 +18,6 @@ function TableEmployee(_ref) {
   function filtreEmployee(e) {
     var searchLettre = e.target.value.toLowerCase();
     console.log(searchLettre);
-    console.log(displayRows);
     displayRows.filter(function (employee) {
       return employee.lastName.toLowerCase().includes(searchLettre);
     });
