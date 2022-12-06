@@ -10,11 +10,12 @@ function TableEmployee({ columns, rows }) {
   function filtreEmployee(e) {
     const searchLettre = e.target.value.toLowerCase()
     console.log(searchLettre)
+    console.log(displayRows)
     displayRows.filter((employee) =>
       employee.lastName.toLowerCase().includes(searchLettre)
     )
+    // console.log(displayRows)
   }
-  console.log(displayRows)
 
   return (
     <div>
