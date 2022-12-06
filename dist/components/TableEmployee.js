@@ -18,11 +18,13 @@ function TableEmployee(_ref) {
   function filtreEmployee(e) {
     var searchLettre = e.target.value.toLowerCase();
     console.log(searchLettre);
+    console.log(displayRows);
     displayRows.filter(function (employee) {
       return employee.lastName.toLowerCase().includes(searchLettre);
     });
+    // console.log(displayRows)
   }
-  console.log(displayRows);
+
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
     className: "searchList"
   }, /*#__PURE__*/_react.default.createElement("label", {
