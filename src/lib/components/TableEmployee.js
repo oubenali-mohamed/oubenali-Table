@@ -8,6 +8,7 @@ function TableEmployee({ columns, rows }) {
     inputSearch.addEventListener('input', filtreEmployee)
     function filtreEmployee(e) {
       const searchLettre = e.target.value.toLowerCase()
+      console.log(searchLettre)
       displayRows.filter((employee) => 
         employee.lastName.toLowerCase().includes(searchLettre)
       )
