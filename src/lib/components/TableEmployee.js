@@ -6,20 +6,21 @@ function TableEmployee({ columns, rows }) {
   window.onload = () => {
     const inputSearch = document.querySelector('#inputSearch')
     inputSearch.addEventListener('input', filtreEmployee)
-    function filtreEmployee(e) {
-      const searchLettre = e.target.value.toLowerCase()
-      console.log(searchLettre)
-      displayRows.filter((employee) => 
-        employee.lastName.toLowerCase().includes(searchLettre)
-      )
-    }
-    console.log(displayRows)
   }
+  function filtreEmployee(e) {
+    const searchLettre = e.target.value.toLowerCase()
+    console.log(searchLettre)
+    displayRows.filter((employee) =>
+      employee.lastName.toLowerCase().includes(searchLettre)
+    )
+  }
+  console.log(displayRows)
+
   return (
     <div>
       <div className="searchList">
         <label htmlFor="inputSearch">Search:</label>
-        <input type="search" id="inputSearch" name="employee" />
+        <input onChange={filtreEmployee} type="search" id="inputSearch" name="employee" />
       </div>
       <table>
         <thead>
