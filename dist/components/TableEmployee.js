@@ -21,7 +21,7 @@ function TableEmployee(_ref) {
   };
   function filtreEmployee(lettre, element) {
     for (var i = 0; i < element.length; i++) {
-      if (element[i].name.toLowerCase().includes(lettre)) {
+      if (element[i].lastName.toLowerCase().includes(lettre)) {
         return element[i];
       }
       console.log(element[i]);
