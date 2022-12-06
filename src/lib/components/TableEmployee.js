@@ -10,7 +10,7 @@ function TableEmployee({ columns, rows }) {
   function filtreEmployee(e) {
     const searchLettre = e.target.value.toLowerCase()
     console.log(searchLettre)
-    displayRows.filter((employee) =>
+    displayRows = rows.filter((employee) =>
       employee.lastName.toLowerCase().includes(searchLettre)
     )
   }
@@ -20,7 +20,12 @@ function TableEmployee({ columns, rows }) {
     <div>
       <div className="searchList">
         <label htmlFor="inputSearch">Search:</label>
-        <input onChange={filtreEmployee} type="search" id="inputSearch" name="employee" />
+        <input
+          onChange={filtreEmployee}
+          type="search"
+          id="inputSearch"
+          name="employee"
+        />
       </div>
       <table>
         <thead>
