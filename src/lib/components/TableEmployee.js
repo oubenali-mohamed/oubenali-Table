@@ -1,7 +1,7 @@
 import React from 'react'
 
 function TableEmployee({ columns, rows }) {
-  let displayRows = rows
+  let displayRows = [...rows]
   console.log(displayRows)
   let searchLettre = ''
 
