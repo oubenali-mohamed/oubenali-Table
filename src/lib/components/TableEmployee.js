@@ -18,24 +18,26 @@ function TableEmployee({ columns, rows }) {
   console.log(selectOption)
   return (
     <div>
-      <div className="selectList">
-        <label className="ShowList">Show</label>
-        <select onChange={selectList}>
-          <option value="10">10</option>
-          <option value="25">25</option>
-          <option value="50">50</option>
-          <option value="100">100</option>
-        </select>
-        <label className="EntriesList">Show</label>
-      </div>
-      <div className="searchList">
-        <label htmlFor="inputSearch">Search:</label>
-        <input
-          type="search"
-          id="inputSearch"
-          name="employee"
-          onChange={filtreEmployee}
-        />
+      <div className="selectAndSearch">
+        <div className="selectList">
+          <label>Show</label>
+          <select onChange={selectList}>
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
+          <label>Entries</label>
+        </div>
+        <div className="searchList">
+          <label htmlFor="inputSearch">Search:</label>
+          <input
+            type="search"
+            id="inputSearch"
+            name="employee"
+            onChange={filtreEmployee}
+          />
+        </div>
       </div>
       <table>
         <thead>

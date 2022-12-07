@@ -30,10 +30,10 @@ function TableEmployee(_ref) {
   };
   console.log(selectOption);
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+    className: "selectAndSearch"
+  }, /*#__PURE__*/_react.default.createElement("div", {
     className: "selectList"
-  }, /*#__PURE__*/_react.default.createElement("label", {
-    className: "ShowList"
-  }, "Show"), /*#__PURE__*/_react.default.createElement("select", {
+  }, /*#__PURE__*/_react.default.createElement("label", null, "Show"), /*#__PURE__*/_react.default.createElement("select", {
     onChange: selectList
   }, /*#__PURE__*/_react.default.createElement("option", {
     value: "10"
@@ -43,9 +43,7 @@ function TableEmployee(_ref) {
     value: "50"
   }, "50"), /*#__PURE__*/_react.default.createElement("option", {
     value: "100"
-  }, "100")), /*#__PURE__*/_react.default.createElement("label", {
-    className: "EntriesList"
-  }, "Show")), /*#__PURE__*/_react.default.createElement("div", {
+  }, "100")), /*#__PURE__*/_react.default.createElement("label", null, "Entries")), /*#__PURE__*/_react.default.createElement("div", {
     className: "searchList"
   }, /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: "inputSearch"
@@ -54,7 +52,7 @@ function TableEmployee(_ref) {
     id: "inputSearch",
     name: "employee",
     onChange: filtreEmployee
-  })), /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, columns.map(function (column, index) {
+  }))), /*#__PURE__*/_react.default.createElement("table", null, /*#__PURE__*/_react.default.createElement("thead", null, /*#__PURE__*/_react.default.createElement("tr", null, columns.map(function (column, index) {
     return /*#__PURE__*/_react.default.createElement("th", {
       key: index
     }, column);
