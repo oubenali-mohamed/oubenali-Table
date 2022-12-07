@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _toConsumableArray2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/toConsumableArray"));
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/slicedToArray"));
 var _react = _interopRequireWildcard(require("react"));
 function TableEmployee(_ref) {
@@ -16,23 +15,11 @@ function TableEmployee(_ref) {
     _useState2 = (0, _slicedToArray2.default)(_useState, 2),
     searchLetter = _useState2[0],
     setSearchLetter = _useState2[1];
-  var displayRows = (0, _toConsumableArray2.default)(rows);
-  console.log(displayRows);
-  // let searchLettre = ''
-
-  /*  const filtreEmployee = (e) => {
-    searchLettre = e.target.value.toLowerCase()
-    console.log(searchLettre)
-    displayRows.filter((row) => {
-      return row.lastName.toLowerCase().includes(searchLettre)
-    })
-    console.log(displayRows)
-  } */
+  var displayRows = rows;
   var filtreEmployee = function filtreEmployee(e) {
     var value = e.target.value;
     setSearchLetter(value);
   };
-  console.log(searchLetter);
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
     className: "searchList"
   }, /*#__PURE__*/_react.default.createElement("label", {

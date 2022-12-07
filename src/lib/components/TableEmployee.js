@@ -3,23 +3,13 @@ import { useState } from 'react'
 
 function TableEmployee({ columns, rows }) {
   const [searchLetter, setSearchLetter] = useState('')
-  let displayRows = [...rows]
-  console.log(displayRows)
-  // let searchLettre = ''
+  let displayRows = rows
 
-  /*  const filtreEmployee = (e) => {
-    searchLettre = e.target.value.toLowerCase()
-    console.log(searchLettre)
-    displayRows.filter((row) => {
-      return row.lastName.toLowerCase().includes(searchLettre)
-    })
-    console.log(displayRows)
-  } */
   const filtreEmployee = (e) => {
     let value = e.target.value
     setSearchLetter(value)
   }
-  console.log(searchLetter)
+
   return (
     <div>
       <div className="searchList">
