@@ -3,7 +3,7 @@ import React from 'react'
 function TableEmployee({ columns, rows }) {
   let displayRows = [...rows]
 
-  window.onload = () => {
+  /*  window.onload = () => {
     const inputSearch = document.querySelector('#inputSearch')
     inputSearch.addEventListener('input', filtreEmployee)
   }
@@ -14,8 +14,11 @@ function TableEmployee({ columns, rows }) {
       employee.lastName.toLowerCase().includes(searchLettre)
     )
     console.log(displayRows)
+  } */
+  let searchLettre = ''
+  const filtreEmployee = (e) => {
+    searchLettre = e.target.value.toLowerCase()
   }
-
   return (
     <div>
       <div className="searchList">
@@ -36,19 +39,23 @@ function TableEmployee({ columns, rows }) {
           </tr>
         </thead>
         <tbody>
-          {displayRows.map((row, index) => (
-            <tr key={index}>
-              <td>{row.firstName}</td>
-              <td>{row.lastName}</td>
-              <td>{row.city}</td>
-              <td>{row.zipCode}</td>
-              <td>{row.street}</td>
-              <td>{row.state}</td>
-              <td>{row.department}</td>
-              <td>{row.dateOfBirth}</td>
-              <td>{row.startDate}</td>
-            </tr>
-          ))}
+          {displayRows
+            .filter((row) =>
+              row.lastName.toLowerCase().includes(searchLettre)
+            )
+            .map((row, index) => (
+              <tr key={index}>
+                <td>{row.firstName}</td>
+                <td>{row.lastName}</td>
+                <td>{row.city}</td>
+                <td>{row.zipCode}</td>
+                <td>{row.street}</td>
+                <td>{row.state}</td>
+                <td>{row.department}</td>
+                <td>{row.dateOfBirth}</td>
+                <td>{row.startDate}</td>
+              </tr>
+            ))}
         </tbody>
       </table>
     </div>
