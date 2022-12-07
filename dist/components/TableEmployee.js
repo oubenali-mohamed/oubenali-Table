@@ -15,12 +15,37 @@ function TableEmployee(_ref) {
     _useState2 = (0, _slicedToArray2.default)(_useState, 2),
     searchLetter = _useState2[0],
     setSearchLetter = _useState2[1];
+  var _useState3 = (0, _react.useState)(''),
+    _useState4 = (0, _slicedToArray2.default)(_useState3, 2),
+    selectOption = _useState4[0],
+    setSelectOption = _useState4[1];
   var displayRows = rows;
   var filtreEmployee = function filtreEmployee(e) {
     var value = e.target.value;
     setSearchLetter(value);
   };
+  var selectList = function selectList(e) {
+    var selectValue = e.target.value;
+    setSelectOption(selectValue);
+  };
+  console.log(selectOption);
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
+    className: "selectList"
+  }, /*#__PURE__*/_react.default.createElement("label", {
+    className: "ShowList"
+  }, "Show"), /*#__PURE__*/_react.default.createElement("select", {
+    onChange: selectList
+  }, /*#__PURE__*/_react.default.createElement("option", {
+    value: "10"
+  }, "10"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "25"
+  }, "25"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "50"
+  }, "50"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "100"
+  }, "100")), /*#__PURE__*/_react.default.createElement("label", {
+    className: "EntriesList"
+  }, "Show")), /*#__PURE__*/_react.default.createElement("div", {
     className: "searchList"
   }, /*#__PURE__*/_react.default.createElement("label", {
     htmlFor: "inputSearch"

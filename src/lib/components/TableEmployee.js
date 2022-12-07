@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 function TableEmployee({ columns, rows }) {
   const [searchLetter, setSearchLetter] = useState('')
+  const [selectOption, setSelectOption] = useState('')
   let displayRows = rows
 
   const filtreEmployee = (e) => {
@@ -10,8 +11,23 @@ function TableEmployee({ columns, rows }) {
     setSearchLetter(value)
   }
 
+  const selectList = (e) => {
+    let selectValue = e.target.value
+    setSelectOption(selectValue)
+  }
+  console.log(selectOption)
   return (
     <div>
+      <div className="selectList">
+        <label className="ShowList">Show</label>
+        <select onChange={selectList}>
+          <option value="10">10</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+        <label className="EntriesList">Show</label>
+      </div>
       <div className="searchList">
         <label htmlFor="inputSearch">Search:</label>
         <input
