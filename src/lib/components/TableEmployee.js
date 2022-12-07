@@ -41,7 +41,9 @@ function TableEmployee({ columns, rows }) {
         </thead>
         <tbody>
           {displayRows
-            .filter((row) => row.lastName.toLowerCase().includes(searchLettre))
+            .filter((row) => {
+              return row.lastName.toLowerCase().includes(searchLettre)
+            })
             .map((row, index) => (
               <tr key={index}>
                 <td>{row.firstName}</td>
