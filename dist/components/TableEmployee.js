@@ -27,6 +27,7 @@ function TableEmployee(_ref) {
   var searchLettre = '';
   var filtreEmployee = function filtreEmployee(e) {
     searchLettre = e.target.value.toLowerCase();
+    console.log(searchLettre);
   };
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
     className: "searchList"

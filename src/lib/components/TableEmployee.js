@@ -18,6 +18,7 @@ function TableEmployee({ columns, rows }) {
   let searchLettre = ''
   const filtreEmployee = (e) => {
     searchLettre = e.target.value.toLowerCase()
+    console.log(searchLettre)
   }
   return (
     <div>
@@ -40,9 +41,7 @@ function TableEmployee({ columns, rows }) {
         </thead>
         <tbody>
           {displayRows
-            .filter((row) =>
-              row.lastName.toLowerCase().includes(searchLettre)
-            )
+            .filter((row) => row.lastName.toLowerCase().includes(searchLettre))
             .map((row, index) => (
               <tr key={index}>
                 <td>{row.firstName}</td>
