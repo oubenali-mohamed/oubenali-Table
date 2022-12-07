@@ -1,26 +1,38 @@
 "use strict";
 
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard").default;
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault").default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
 var _toConsumableArray2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/toConsumableArray"));
-var _react = _interopRequireDefault(require("react"));
+var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/slicedToArray"));
+var _react = _interopRequireWildcard(require("react"));
 function TableEmployee(_ref) {
   var columns = _ref.columns,
     rows = _ref.rows;
+  var _useState = (0, _react.useState)(''),
+    _useState2 = (0, _slicedToArray2.default)(_useState, 2),
+    searchLetter = _useState2[0],
+    setSearchLetter = _useState2[1];
   var displayRows = (0, _toConsumableArray2.default)(rows);
   console.log(displayRows);
-  var searchLettre = '';
+  // let searchLettre = ''
+
+  /*  const filtreEmployee = (e) => {
+    searchLettre = e.target.value.toLowerCase()
+    console.log(searchLettre)
+    displayRows.filter((row) => {
+      return row.lastName.toLowerCase().includes(searchLettre)
+    })
+    console.log(displayRows)
+  } */
   var filtreEmployee = function filtreEmployee(e) {
-    searchLettre = e.target.value.toLowerCase();
-    console.log(searchLettre);
-    displayRows.filter(function (row) {
-      return row.lastName.toLowerCase().includes(searchLettre);
-    });
-    console.log(displayRows);
+    var value = e.target.value;
+    setSearchLetter(value);
   };
+  console.log(searchLetter);
   return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", {
     className: "searchList"
   }, /*#__PURE__*/_react.default.createElement("label", {
@@ -34,7 +46,9 @@ function TableEmployee(_ref) {
     return /*#__PURE__*/_react.default.createElement("th", {
       key: index
     }, column);
-  }))), /*#__PURE__*/_react.default.createElement("tbody", null, displayRows.map(function (row, index) {
+  }))), /*#__PURE__*/_react.default.createElement("tbody", null, displayRows.filter(function (employee) {
+    return employee.lastName.toLowerCase().includes(searchLetter.toLowerCase());
+  }).map(function (row, index) {
     return /*#__PURE__*/_react.default.createElement("tr", {
       key: index
     }, /*#__PURE__*/_react.default.createElement("td", null, row.firstName), /*#__PURE__*/_react.default.createElement("td", null, row.lastName), /*#__PURE__*/_react.default.createElement("td", null, row.city), /*#__PURE__*/_react.default.createElement("td", null, row.zipCode), /*#__PURE__*/_react.default.createElement("td", null, row.street), /*#__PURE__*/_react.default.createElement("td", null, row.state), /*#__PURE__*/_react.default.createElement("td", null, row.department), /*#__PURE__*/_react.default.createElement("td", null, row.dateOfBirth), /*#__PURE__*/_react.default.createElement("td", null, row.startDate));
