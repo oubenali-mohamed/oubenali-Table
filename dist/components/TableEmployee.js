@@ -5,25 +5,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var _toConsumableArray2 = _interopRequireDefault(require("@babel/runtime/helpers/esm/toConsumableArray"));
 var _react = _interopRequireDefault(require("react"));
 function TableEmployee(_ref) {
   var columns = _ref.columns,
     rows = _ref.rows;
-  var displayRows = (0, _toConsumableArray2.default)(rows);
-
-  /*  window.onload = () => {
-    const inputSearch = document.querySelector('#inputSearch')
-    inputSearch.addEventListener('input', filtreEmployee)
-  }
-  function filtreEmployee(e) {
-    const searchLettre = e.target.value.toLowerCase()
-    console.log(searchLettre)
-    displayRows.filter((employee) =>
-      employee.lastName.toLowerCase().includes(searchLettre)
-    )
-    console.log(displayRows)
-  } */
+  var displayRows = rows;
+  console.log(displayRows);
   var searchLettre = '';
   var filtreEmployee = function filtreEmployee(e) {
     searchLettre = e.target.value.toLowerCase();
