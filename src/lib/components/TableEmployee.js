@@ -19,16 +19,20 @@ function TableEmployee({ columns, rows }) {
   const filtreEmployee = (e) => {
     searchLettre = e.target.value.toLowerCase()
     console.log(searchLettre)
+    displayRows.filter((row) => {
+      return row.lastName.toLowerCase().includes(searchLettre)
+    })
+    console.log(displayRows)
   }
   return (
     <div>
       <div className="searchList">
         <label htmlFor="inputSearch">Search:</label>
         <input
-          onChange={filtreEmployee}
           type="search"
           id="inputSearch"
           name="employee"
+          onChange={filtreEmployee}
         />
       </div>
       <table>
@@ -40,23 +44,19 @@ function TableEmployee({ columns, rows }) {
           </tr>
         </thead>
         <tbody>
-          {displayRows
-            .filter((row) => {
-              return row.lastName.toLowerCase().includes(searchLettre)
-            })
-            .map((row, index) => (
-              <tr key={index}>
-                <td>{row.firstName}</td>
-                <td>{row.lastName}</td>
-                <td>{row.city}</td>
-                <td>{row.zipCode}</td>
-                <td>{row.street}</td>
-                <td>{row.state}</td>
-                <td>{row.department}</td>
-                <td>{row.dateOfBirth}</td>
-                <td>{row.startDate}</td>
-              </tr>
-            ))}
+          {displayRows.map((row, index) => (
+            <tr key={index}>
+              <td>{row.firstName}</td>
+              <td>{row.lastName}</td>
+              <td>{row.city}</td>
+              <td>{row.zipCode}</td>
+              <td>{row.street}</td>
+              <td>{row.state}</td>
+              <td>{row.department}</td>
+              <td>{row.dateOfBirth}</td>
+              <td>{row.startDate}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
