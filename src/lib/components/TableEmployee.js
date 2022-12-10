@@ -50,21 +50,53 @@ function TableEmployee({ columns, rows }) {
         <tbody>
           {displayRows
             .filter((employee) => {
-              return employee.lastName
-                .toLowerCase()
-                .includes(searchLetter.toLowerCase())
+              return (
+                employee.firstName
+                  .toLowerCase()
+                  .toLowerCase()
+                  .includes(searchLetter.toLowerCase()) ||
+                employee.lastName
+                  .toLowerCase()
+                  .toLowerCase()
+                  .includes(searchLetter.toLowerCase()) ||
+                employee.city
+                  .toLowerCase()
+                  .toLowerCase()
+                  .includes(searchLetter.toLowerCase()) ||
+                employee.zipCode
+                  .toLowerCase()
+                  .toLowerCase()
+                  .includes(searchLetter.toLowerCase()) ||
+                employee.street
+                  .toLowerCase()
+                  .toLowerCase()
+                  .includes(searchLetter.toLowerCase()) ||
+                employee.state
+                  .toLowerCase()
+                  .toLowerCase()
+                  .includes(searchLetter.toLowerCase()) ||
+                employee.department
+                  .toLowerCase()
+                  .includes(searchLetter.toLowerCase()) ||
+                employee.dateOfBirth
+                  .toLowerCase()
+                  .includes(searchLetter.toLowerCase()) ||
+                employee.startDate
+                  .toLowerCase()
+                  .includes(searchLetter.toLowerCase())
+              )
             })
             .map((row, index) => (
               <tr key={index}>
                 <td>{row.firstName}</td>
                 <td>{row.lastName}</td>
-                <td>{row.city}</td>
-                <td>{row.zipCode}</td>
-                <td>{row.street}</td>
-                <td>{row.state}</td>
+                <td>{row.startDate}</td>
                 <td>{row.department}</td>
                 <td>{row.dateOfBirth}</td>
-                <td>{row.startDate}</td>
+                <td>{row.street}</td>
+                <td>{row.city}</td>
+                <td>{row.state}</td>
+                <td>{row.zipCode}</td>
               </tr>
             ))}
         </tbody>
