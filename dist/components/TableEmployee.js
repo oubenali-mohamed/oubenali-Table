@@ -57,7 +57,7 @@ function TableEmployee(_ref) {
       key: index
     }, column);
   }))), /*#__PURE__*/_react.default.createElement("tbody", null, displayRows.filter(function (employee) {
-    return employee.firstName.toLowerCase().toLowerCase().includes(searchLetter.toLowerCase()) || employee.lastName.toLowerCase().toLowerCase().includes(searchLetter.toLowerCase()) || employee.city.toLowerCase().toLowerCase().includes(searchLetter.toLowerCase()) || employee.zipCode.toLowerCase().toLowerCase().includes(searchLetter.toLowerCase()) || employee.street.toLowerCase().toLowerCase().includes(searchLetter.toLowerCase()) || employee.state.toLowerCase().toLowerCase().includes(searchLetter.toLowerCase()) || employee.department.toLowerCase().includes(searchLetter.toLowerCase()) || employee.dateOfBirth.toLowerCase().includes(searchLetter.toLowerCase()) || employee.startDate.toLowerCase().includes(searchLetter.toLowerCase());
+    return employee.firstName.toLowerCase().includes(searchLetter.toLowerCase()) || employee.lastName.toLowerCase().includes(searchLetter.toLowerCase()) || employee.startDate.includes(searchLetter) || employee.department.toLowerCase().includes(searchLetter.toLowerCase()) || employee.dateOfBirth.includes(searchLetter) || employee.street.toLowerCase().includes(searchLetter.toLowerCase()) || employee.city.toLowerCase().includes(searchLetter.toLowerCase()) || employee.state.toLowerCase().includes(searchLetter.toLowerCase()) || employee.zipCode.includes(searchLetter);
   }).map(function (row, index) {
     return /*#__PURE__*/_react.default.createElement("tr", {
       key: index
