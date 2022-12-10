@@ -59,9 +59,9 @@ function TableEmployee(_ref) {
   }))), /*#__PURE__*/_react.default.createElement("tbody", null, displayRows.filter(function (employee) {
     return employee.firstName.toLowerCase().includes(searchLetter.toLowerCase()) || employee.lastName.toLowerCase().includes(searchLetter.toLowerCase()) || employee.startDate.includes(searchLetter) || employee.department.toLowerCase().includes(searchLetter.toLowerCase()) || employee.dateOfBirth.includes(searchLetter) || employee.street.toLowerCase().includes(searchLetter.toLowerCase()) || employee.city.toLowerCase().includes(searchLetter.toLowerCase()) || employee.state.toLowerCase().includes(searchLetter.toLowerCase()) || employee.zipCode.includes(searchLetter);
   }).map(function (row, index) {
-    return /*#__PURE__*/_react.default.createElement("tr", {
+    return index === 10 ? /*#__PURE__*/_react.default.createElement("tr", {
       key: index
-    }, /*#__PURE__*/_react.default.createElement("td", null, row.firstName), /*#__PURE__*/_react.default.createElement("td", null, row.lastName), /*#__PURE__*/_react.default.createElement("td", null, row.startDate), /*#__PURE__*/_react.default.createElement("td", null, row.department), /*#__PURE__*/_react.default.createElement("td", null, row.dateOfBirth), /*#__PURE__*/_react.default.createElement("td", null, row.street), /*#__PURE__*/_react.default.createElement("td", null, row.city), /*#__PURE__*/_react.default.createElement("td", null, row.state), /*#__PURE__*/_react.default.createElement("td", null, row.zipCode));
+    }, /*#__PURE__*/_react.default.createElement("td", null, row.firstName), /*#__PURE__*/_react.default.createElement("td", null, row.lastName), /*#__PURE__*/_react.default.createElement("td", null, row.startDate), /*#__PURE__*/_react.default.createElement("td", null, row.department), /*#__PURE__*/_react.default.createElement("td", null, row.dateOfBirth), /*#__PURE__*/_react.default.createElement("td", null, row.street), /*#__PURE__*/_react.default.createElement("td", null, row.city), /*#__PURE__*/_react.default.createElement("td", null, row.state), /*#__PURE__*/_react.default.createElement("td", null, row.zipCode)) : null;
   }))));
 }
 var _default = TableEmployee;
