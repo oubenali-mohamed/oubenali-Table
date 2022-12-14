@@ -1,9 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
-
+import Pagination from './Pagination'
 function TableEmployee({ columns, rows }) {
   const [searchLetter, setSearchLetter] = useState('')
-  const [selectOption, setSelectOption] = useState('')
+  const [selectOption, setSelectOption] = useState(0)
+  const [currentPage, setCurrentPage] = useState(1)
+  const [employesPerPage] = useState(10)
+
   let displayRows = rows
 
   const filtreEmployee = (e) => {
@@ -15,7 +18,17 @@ function TableEmployee({ columns, rows }) {
     let selectValue = e.target.value
     setSelectOption(selectValue)
   }
-  console.log(selectOption)
+  // if (selectOption == 25) {
+  //   console.log(selectOption)
+  //   displayRows.slice(0, 25)
+  // } else if (selectOption == 50) {
+  //   console.log(selectOption)
+  // } else if (selectOption == 100) {
+  //   console.log(selectOption)
+  // }
+  const lastEmployeIndex = currentPage * employesPerPage
+  const firstEmployeIndex = lastEmployeIndex - employesPerPage
+  const currentEmployes = displayRows.slice(firstEmployeIndex, lastEmployeIndex)
   return (
     <div>
       <div className="selectAndSearch">
@@ -48,7 +61,7 @@ function TableEmployee({ columns, rows }) {
           </tr>
         </thead>
         <tbody>
-          {displayRows
+          {currentEmployes
             .filter((employee) => {
               return (
                 employee.firstName
@@ -74,23 +87,27 @@ function TableEmployee({ columns, rows }) {
                 employee.zipCode.includes(searchLetter)
               )
             })
-            .map((row, index) =>
-              index === 10 ? (
-                <tr key={index}>
-                  <td>{row.firstName}</td>
-                  <td>{row.lastName}</td>
-                  <td>{row.startDate}</td>
-                  <td>{row.department}</td>
-                  <td>{row.dateOfBirth}</td>
-                  <td>{row.street}</td>
-                  <td>{row.city}</td>
-                  <td>{row.state}</td>
-                  <td>{row.zipCode}</td>
-                </tr>
-              ) : null
-            )}
+            .map((row, index) => (
+              <tr key={index}>
+                <td>{row.firstName}</td>
+                <td>{row.lastName}</td>
+                <td>{row.startDate}</td>
+                <td>{row.department}</td>
+                <td>{row.dateOfBirth}</td>
+                <td>{row.street}</td>
+                <td>{row.city}</td>
+                <td>{row.state}</td>
+                <td>{row.zipCode}</td>
+              </tr>
+            ))}
         </tbody>
       </table>
+      <Pagination
+        totalEmployes={displayRows.length}
+        employesPerPage={employesPerPage}
+        setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
+      />
     </div>
   )
 }
