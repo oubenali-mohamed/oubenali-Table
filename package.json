@@ -1,6 +1,6 @@
 {
-  "name": "ma-librairie-table",
-  "version": "4.9.5",
+  "name": "table-library-oc",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
