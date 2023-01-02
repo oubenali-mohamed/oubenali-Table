@@ -1,64 +1,55 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import Pagination from './Pagination'
+
 function TableEmployee({ columns, rows }) {
+  const [currentEmployes, setCurrentEmployes] = useState([])
   const [searchLetter, setSearchLetter] = useState('')
-  const [selectOption, setSelectOption] = useState('10')
   const [currentPage, setCurrentPage] = useState(1)
   const [employesPerPage, setEmployesPerPage] = useState(10)
-  const [currentEmployes, setCurrentEmployes] = useState([])
 
   useEffect(() => {
-    const lastEmployeIndex = currentPage * employesPerPage
-    const firstEmployeIndex = lastEmployeIndex - employesPerPage
-    setCurrentEmployes(rows.slice(firstEmployeIndex, lastEmployeIndex))
+    setCurrentEmployes([...rows])
   }, [])
 
-  const filtreEmployee = (e) => {
+  const lastPostIndex = currentPage * employesPerPage
+  const firstPostIndex = lastPostIndex - employesPerPage
+  const employes = currentEmployes.slice(firstPostIndex, lastPostIndex)
+
+  function filtreEmployee(e) {
     let letterValue = e.target.value
-    let resultat = null
     if (letterValue.length == 0) {
-      resultat = rows
+      return currentEmployes
     } else {
       setSearchLetter(letterValue)
-      resultat = rows.filter((employee) => {
-        return (
-          employee.firstName
-            .toLowerCase()
-            .includes(searchLetter.toLowerCase()) ||
-          employee.lastName
-            .toLowerCase()
-            .includes(searchLetter.toLowerCase()) ||
-          employee.startDate.includes(searchLetter) ||
-          employee.department
-            .toLowerCase()
-            .includes(searchLetter.toLowerCase()) ||
-          employee.dateOfBirth.includes(searchLetter) ||
-          employee.street.toLowerCase().includes(searchLetter.toLowerCase()) ||
-          employee.city.toLowerCase().includes(searchLetter.toLowerCase()) ||
-          employee.state.toLowerCase().includes(searchLetter.toLowerCase()) ||
-          employee.zipCode.includes(searchLetter)
-        )
-      })
+      setCurrentEmployes([
+        ...currentEmployes.filter((employee) => {
+          return (
+            employee.firstName
+              .toLowerCase()
+              .includes(searchLetter.toLowerCase()) ||
+            employee.lastName
+              .toLowerCase()
+              .includes(searchLetter.toLowerCase()) ||
+            employee.startDate.includes(searchLetter) ||
+            employee.department
+              .toLowerCase()
+              .includes(searchLetter.toLowerCase()) ||
+            employee.dateOfBirth.includes(searchLetter) ||
+            employee.street
+              .toLowerCase()
+              .includes(searchLetter.toLowerCase()) ||
+            employee.city.toLowerCase().includes(searchLetter.toLowerCase()) ||
+            employee.state.toLowerCase().includes(searchLetter.toLowerCase()) ||
+            employee.zipCode.includes(searchLetter)
+          )
+        }),
+      ])
     }
-    const lastEmployeIndex = currentPage * employesPerPage
-    const firstEmployeIndex = lastEmployeIndex - employesPerPage
-    setCurrentEmployes(resultat.slice(firstEmployeIndex, lastEmployeIndex))
   }
-
   const selectList = (e) => {
     let valueSelect = e.target.value
-    setSelectOption(valueSelect)
-    if (selectOption == '25') {
-      console.log(selectOption)
-      setEmployesPerPage(25)
-    } else if (selectOption == '50') {
-      console.log(selectOption)
-      setEmployesPerPage(50)
-    } else if (selectOption == '100') {
-      console.log(selectOption)
-      setEmployesPerPage(100)
-    }
+    setEmployesPerPage(valueSelect)
   }
 
   return (
@@ -66,7 +57,7 @@ function TableEmployee({ columns, rows }) {
       <div className="selectAndSearch">
         <div className="selectList">
           <label>Show</label>
-          <select value={selectOption} onChange={selectList}>
+          <select value={employesPerPage} onChange={selectList}>
             <option value="10">10</option>
             <option value="25">25</option>
             <option value="50">50</option>
@@ -93,7 +84,7 @@ function TableEmployee({ columns, rows }) {
           </tr>
         </thead>
         <tbody>
-          {currentEmployes.map((row, index) => (
+          {employes.slice(0, employesPerPage).map((row, index) => (
             <tr key={index}>
               <td>{row.firstName}</td>
               <td>{row.lastName}</td>

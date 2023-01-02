@@ -1,6 +1,6 @@
 {
   "name": "table-library-oc",
-  "version": "2.0.1",
+  "version": "3.4.9",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
